@@ -1,0 +1,41 @@
+{
+  "name": "diary",
+  "version": "1.0.0",
+  "description": "Diary App",
+  "main": "dist/main.js",
+  "repository": "https://github.com/rurumimic/react-ts",
+  "author": "rurumimic",
+  "license": "MIT",
+  "scripts": {
+    "server": "ts-node src/main.ts",
+    "start": "concurrently \"yarn run server\" \"cd client && yarn start\"",
+    "lint": "eslint --ext .js,.ts .",
+    "prettier": "prettier --check src/**/*"
+  },
+  "dependencies": {
+    "@koa/router": "^8.0.8",
+    "koa": "^2.11.0",
+    "koa-static": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.11.2",
+    "@types/koa-static": "^4.0.1",
+    "@types/koa__router": "^8.0.2",
+    "@typescript-eslint/eslint-plugin": "^2.23.0",
+    "@typescript-eslint/parser": "^2.23.0",
+    "concurrently": "^5.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-config-standard-with-typescript": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "gulp": "^4.0.2",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "prettier": "1.19.1",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.8.3"
+  }
+}
