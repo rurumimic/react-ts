@@ -34,7 +34,7 @@
 
 ### Deployment
 
-1.
+1. AWS beanstalk
 
 ---
 
