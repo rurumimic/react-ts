@@ -5,37 +5,48 @@
 ### Koa + React
 
 1. [Start with Yarn](docs/001.start.md): Javascript package manager.
-1. [Koa.js with TypeScript](docs/002.koa.md): Web Framework for Node.js.
-1. [React.js with TypeScript](docs/003.react.md): Web Application Javascript library.
-1. [koa-static](docs/004.koa-static.md): Send static files to client.
-1. [koa-router](docs/005.koa-router.md): Router middleware. Connect the koa server to the react app in development environment using proxy settings. And use TS Node.
-1. [concurrently](docs/006.concurrently.md): Development environment automation.
+2. [Koa.js with TypeScript](docs/002.koa.md): Web Framework for Node.js.
+3. [React.js with TypeScript](docs/003.react.md): Web Application Javascript library.
+4. [koa-static](docs/004.koa-static.md): Send static files to client.
+5. [koa-router](docs/005.koa-router.md): Router middleware. Connect the koa server to the react app in development environment using proxy settings. And use TS Node.
+6. [concurrently](docs/006.concurrently.md): Development environment automation.
 
 ### Lint
 
 1. [ESLint](docs/007.eslint.md): Linter for the Javascript/TypeScript language.
-1. [Prettier](docs/008.prettier.md): Code Formatter.
+2. [Prettier](docs/008.prettier.md): Code Formatter.
 
 ### Test-driven development
 
 1. [React test](docs/009.react-test.md): Jest.
 2. [Node test](docs/010.node-test.md): Mocha, Chai, Supertest.
 
-### Redux pattern
-
-1. Redux pattern
-
 ### Database
 
-1. Database
+1. MySQL
+2. Prisma
+3. GraphQL
 
 ### OAuth2
 
-1. OAuth2
+1. Passport
+
+### Board
+
+1. Apollo
+2. AWS S3
+3. Markdown Editor
+4. Upload Images
+
+### Metadata
+
+1. Favicon
 
 ### Deployment
 
-1. AWS beanstalk
+1. Environment Variables
+2. AWS beanstalk
+3. AWS Route 53
 
 ---
 
