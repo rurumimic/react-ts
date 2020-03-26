@@ -7,11 +7,12 @@
   "author": "rurumimic",
   "license": "MIT",
   "scripts": {
+    "build": "gulp && cd client && yarn build",
     "server": "ts-node src/main.ts",
-    "start": "concurrently \"yarn run server\" \"cd client && yarn start\"",
+    "start": "concurrently \"yarn server\" \"cd client && yarn start\"",
     "lint": "eslint --ext .js,.ts .",
     "prettier": "prettier --check src/**/*",
-    "test": "jest"
+    "test": "mocha --require ts-node/register --watch --watch-files src src/**/*.test.ts"
   },
   "dependencies": {
     "@koa/router": "^8.0.8",
@@ -19,12 +20,15 @@
     "koa-static": "^5.0.0"
   },
   "devDependencies": {
-    "@types/jest": "^25.1.4",
+    "@types/chai": "^4.2.11",
     "@types/koa": "^2.11.2",
     "@types/koa-static": "^4.0.1",
     "@types/koa__router": "^8.0.2",
+    "@types/mocha": "^7.0.2",
+    "@types/supertest": "^2.0.8",
     "@typescript-eslint/eslint-plugin": "^2.23.0",
     "@typescript-eslint/parser": "^2.23.0",
+    "chai": "^4.2.0",
     "concurrently": "^5.1.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
@@ -36,9 +40,9 @@
     "eslint-plugin-standard": "^4.0.1",
     "gulp": "^4.0.2",
     "gulp-typescript": "^6.0.0-alpha.1",
-    "jest": "^25.1.0",
+    "mocha": "^7.1.1",
     "prettier": "1.19.1",
-    "ts-jest": "^25.2.1",
+    "supertest": "^4.0.2",
     "ts-node": "^8.6.2",
     "typescript": "^3.8.3"
   }
