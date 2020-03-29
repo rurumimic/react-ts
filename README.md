@@ -24,7 +24,7 @@
 ### Database
 
 1. [Database](docs/011.database.md): MariaDB with Docker.
-2. Sequelize
+2. [Sequelize](docs/012.sequelize.md): Promise-based Node.js ORM
 
 ### OAuth2
 

@@ -7,6 +7,6 @@ services:
       - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: rootpw
-      MYSQL_DATABASE: diary
+      MYSQL_DATABASE: develop
       MYSQL_USER: master
       MYSQL_PASSWORD: mypw
