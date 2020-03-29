@@ -23,20 +23,22 @@
 
 ### Database
 
-1. MySQL
-2. Prisma
-3. GraphQL
+1. [Database](docs/011.database.md): MariaDB with Docker.
+2. Sequelize
 
 ### OAuth2
 
 1. Passport
 
+### Redux
+
+1. redux
+
 ### Board
 
-1. Apollo
-2. AWS S3
-3. Markdown Editor
-4. Upload Images
+1. AWS S3
+2. Markdown Editor
+3. Upload Images
 
 ### Metadata
 
@@ -45,8 +47,9 @@
 ### Deployment
 
 1. Environment Variables
-2. AWS beanstalk
-3. AWS Route 53
+2. AWS RDS
+3. AWS Beanstalk
+4. AWS Route 53
 
 ---
 

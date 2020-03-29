@@ -12,7 +12,10 @@
     "start": "concurrently \"yarn server\" \"cd client && yarn start\"",
     "lint": "eslint --ext .js,.ts .",
     "prettier": "prettier --check src/**/*",
-    "test": "mocha --require ts-node/register --watch --watch-files src src/**/*.test.ts"
+    "test": "mocha --require ts-node/register --watch --watch-files src src/**/*.test.ts",
+    "database:up": "docker-compose -f docker/database.yml up -d",
+    "database:stop": "docker-compose -f docker/database.yml stop",
+    "database:down": "docker-compose -f docker/database.yml down"
   },
   "dependencies": {
     "@koa/router": "^8.0.8",
