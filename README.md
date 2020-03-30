@@ -29,7 +29,7 @@
 ### OAuth2
 
 1. [GitHub OAuth Apps](docs/013.github-oauth.md):
-2. Passport
+2. [Passport](docs/014.passport.md)
 
 ### Redux
 
