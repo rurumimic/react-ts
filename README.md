@@ -11,7 +11,7 @@
 3. [React.js with TypeScript](docs/003.react.md): Web Application Javascript library.
    - create-react-app
 4. [koa-static](docs/004.koa-static.md): Send static files to client.
-5. [koa-router](docs/005.koa-router.md): Router middleware. Connect the koa server to the react app in development environment using proxy settings. And use TS Node.
+5. [koa-router](docs/005.koa-router.md): Router middleware. Connect the koa server to the react app in development environment using proxy settings.
    - server: dotenv, ts-node
    - client: axios
 6. [concurrently](docs/006.concurrently.md): Development environment automation.
