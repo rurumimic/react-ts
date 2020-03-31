@@ -28,8 +28,8 @@
 
 ### OAuth2
 
-1. [GitHub OAuth Apps](docs/013.github-oauth.md):
-2. [Passport](docs/014.passport.md)
+1. [GitHub OAuth Apps](docs/013.github-oauth.md): Register a new GitHub OAuth application.
+2. [Passport](docs/014.passport.md): part 1. Get a GitHub user profile.
 
 ### Redux
 

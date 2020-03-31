@@ -9,7 +9,8 @@
   "scripts": {
     "build": "gulp && cd client && yarn build",
     "server": "ts-node src/main.ts",
-    "start": "concurrently \"yarn server\" \"cd client && yarn start\"",
+    "local": "ts-node -r dotenv/config src/main.ts",
+    "start": "concurrently \"yarn local\" \"cd client && yarn start\"",
     "lint": "eslint --ext .js,.ts .",
     "prettier": "prettier --check src/**/*",
     "test": "mocha --require ts-node/register --watch --watch-files src src/**/*.test.ts",
@@ -45,6 +46,7 @@
     "@typescript-eslint/parser": "^2.23.0",
     "chai": "^4.2.0",
     "concurrently": "^5.1.0",
+    "dotenv": "^8.2.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-config-standard-with-typescript": "^14.0.0",
