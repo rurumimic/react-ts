@@ -6,7 +6,6 @@ import { searchUserId } from './search_user'
 import { updateUser } from './update_user'
 import { signupUser } from './signup_user'
 
-// Strategy Option
 const option = {
   clientID: process.env.GITHUB_OAUTH_ID,
   clientSecret: process.env.GITHUB_OAUTH_SECRET,
