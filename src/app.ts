@@ -4,7 +4,7 @@ import bodyParser from 'koa-bodyparser'
 import session from 'koa-session'
 import path from 'path'
 
-import sessionConfig from './config/session'
+import { sessionConfig, sessionKey } from './config/session'
 import auth from './auth'
 import router from './routes'
 
@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // Session
-app.keys = [process.env.SESSION_KEY]
+app.keys = [sessionKey]
 app.use(session(sessionConfig, app))
 
 // Body Parser

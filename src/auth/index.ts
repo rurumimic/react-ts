@@ -1,14 +1,51 @@
 import passport from 'koa-passport'
-import { Strategy } from 'passport-github2'
+import OAuth2Strategy from 'passport-oauth2'
+import { Strategy, Profile } from 'passport-github2'
+
+import { searchUserId } from './search_user'
+import { updateUser } from './update_user'
+import { signupUser } from './signup_user'
 
 // Strategy Option
-const strategyOption = {
+const option = {
   clientID: process.env.GITHUB_OAUTH_ID,
   clientSecret: process.env.GITHUB_OAUTH_SECRET,
   callbackURL: process.env.API_URI + '/api/oauth/authorize',
 }
 
-// Passport session setup.
+const verify = (
+  accessToken: string,
+  refreshToken: string,
+  profile: Profile,
+  done: OAuth2Strategy.VerifyCallback
+): void => {
+  searchUserId(profile.id)
+    .then(userId => {
+      if (userId == null) {
+        signupUser(accessToken, profile)
+          .then(userId => {
+            return done(null, { id: userId })
+          })
+          .catch(error => {
+            console.error('[Error] DB Access Failed in step 2:', error.message)
+          })
+      } else {
+        updateUser(accessToken, profile)
+          .then(() => {
+            done(null, { id: userId })
+          })
+          .catch(error => {
+            console.error('[Error] DB Access Failed in step 3:', error.message)
+          })
+      }
+    })
+    .catch(error => {
+      console.error('[Error] DB Access Failed in step 1:', error.message)
+      return done(error)
+    })
+}
+
+// Passport session setup
 passport.serializeUser((user, done) => {
   done(null, user)
 })
@@ -17,21 +54,6 @@ passport.deserializeUser((user, done) => {
   done(null, user)
 })
 
-passport.use(
-  new Strategy(
-    strategyOption,
-    (
-      accessToken: string,
-      refreshToken: string,
-      profile: any,
-      done: Function
-    ) => {
-      console.log('accessToken:', accessToken)
-      console.log('refreshToken:', refreshToken)
-      console.log('profile:', profile)
-      return done(null, profile.id)
-    }
-  )
-)
+passport.use(new Strategy(option, verify))
 
 export default passport

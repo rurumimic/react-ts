@@ -1,4 +1,4 @@
-const config = {
+export const sessionConfig = {
   key: 'koa:sess' /** (string) cookie key (default is koa:sess) */,
   /** (number || 'session') maxAge in ms (default is 1 days) */
   /** 'session' will result in a cookie that expires when session/browser is closed */
@@ -12,4 +12,7 @@ const config = {
   renew: false /** (boolean) renew session when session is nearly expired, so we can always keep user logged in. (default is false) */,
 }
 
-export default config
+if (typeof process.env.SESSION_KEY === 'undefined') {
+  throw new Error('No SESSION_KEY.')
+}
+export const sessionKey: string = process.env.SESSION_KEY
