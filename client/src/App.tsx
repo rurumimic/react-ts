@@ -1,22 +1,14 @@
 import React from 'react'
-import axios from 'axios'
+import { Route, Switch, BrowserRouter as Router } from 'react-router-dom'
 
-interface State {
-  message: string
-}
+import { Home } from './pages/home'
 
-class App extends React.Component<{}, State> {
-  state: State = { message: 'loading...' }
-
-  async componentDidMount(): Promise<void> {
-    const response = await axios.get('/api/hello')
-    const json = await response.data
-    this.setState({ message: json.greet })
-  }
-
-  render(): JSX.Element {
-    return <div>{this.state.message}</div>
-  }
-}
+const App = (): JSX.Element => (
+  <Router>
+    <Switch>
+      <Route exact path="/" component={Home} />
+    </Switch>
+  </Router>
+)
 
 export default App

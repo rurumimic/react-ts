@@ -41,6 +41,16 @@
 3. [Sign up](docs/015.signup.md): Save a user profile in the database.
 4. [Sign in/out](docs/016.singin-out.md): Koa.js authentication.
 
+### React.js
+
+1. [Home page](docs/017.home.md)
+   - react-bootstrap, react-router
+2. Login
+
+### Helmet
+
+1. helmet
+
 ### Redux
 
 1. redux
