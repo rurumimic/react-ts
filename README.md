@@ -43,27 +43,20 @@
 
 ### React.js
 
-1. [Home page](docs/017.home.md)
-   - react-bootstrap, react-router
-2. Login
+#### Home
 
-### Helmet
+1. [Favicon](docs/017.favicon.md): Web app manifests.
+2. [Font](docs/018.font.md): Web fonts.
+3. [Home page](docs/019.home.md)
+   - node-sass, react-bootstrap, react-router
 
-1. helmet
-
-### Redux
+#### Redux
 
 1. redux
 
-### Board
+#### Helmet
 
-1. AWS S3
-2. Markdown Editor
-3. Upload Images
-
-### Metadata
-
-1. Favicon
+1. helmet
 
 ### Deployment
 

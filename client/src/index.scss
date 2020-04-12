@@ -1,0 +1,13 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import './fonts/merriweather.css';
+
+body {
+  font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
+  font-weight: 300;
+}
+
+.logo {
+  font-weight: 700;
+  font-style: italic;
+  font-size: 2.25rem;
+}
