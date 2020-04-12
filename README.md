@@ -50,9 +50,9 @@
 3. [Home page](docs/019.home.md)
    - node-sass, react-bootstrap, react-router
 
-#### Redux
+#### Login
 
-1. redux
+1. [Redux]
 
 #### Helmet
 

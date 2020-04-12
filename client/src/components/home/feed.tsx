@@ -21,10 +21,6 @@ export class Feed extends React.Component {
                 Once, he had even brought a wicked toddler back from the brink
                 of death. That's the sort of man he was.
               </p>
-              <p>
-                Simon walked over to the window and reflected on his deserted
-                surroundings. The sun shone like boating foxes.
-              </p>
             </div>
             <div className="py-3">
               <h2>Violent Kate Hemingway</h2>
@@ -39,10 +35,6 @@ export class Feed extends React.Component {
                 volcano. Once, she had even helped a proud toddler cross the
                 road. That's the sort of woman he was.
               </p>
-              <p>
-                Kate walked over to the window and reflected on her quiet
-                surroundings. The moon shone like hopping humming birds.
-              </p>
             </div>
             <div className="py-3">
               <h2>Ruthless Steve Rabbit</h2>
@@ -56,10 +48,6 @@ export class Feed extends React.Component {
                 surroundings. He had always loved snooty Philadelphia with its
                 wasteful, wooden waters. It was a place that encouraged his
                 tendency to feel calm.
-              </p>
-              <p>
-                Then he saw something in the distance, or rather someone. It was
-                the an optimistic figure of Suzanne Gump.
               </p>
             </div>
           </Col>
