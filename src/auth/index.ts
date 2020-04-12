@@ -2,9 +2,9 @@ import passport from 'koa-passport'
 import OAuth2Strategy from 'passport-oauth2'
 import { Strategy, Profile } from 'passport-github2'
 
-import { searchUserId } from './search_user'
-import { updateUser } from './update_user'
-import { signupUser } from './signup_user'
+import { searchUserId } from './searchUser'
+import { updateUser } from './updateUser'
+import { signupUser } from './signupUser'
 
 const option = {
   clientID: process.env.GITHUB_OAUTH_ID,
