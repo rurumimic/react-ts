@@ -52,7 +52,10 @@
 
 #### Login
 
-1. [Redux]
+1. [Redux: store](docs/020.redux.md): Setting up the redux store.
+   - @reduxjs/toolkit, react-redux
+2. [Redux: reducer](docs/021.reducer.md): Creating the initial state slices.
+3. [Sign in page](docs/022.signin.md)
 
 #### Helmet
 
