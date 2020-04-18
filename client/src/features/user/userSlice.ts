@@ -7,13 +7,13 @@ interface User {
 }
 
 interface Login {
-  login: boolean
+  isLogin: boolean
 }
 
 type UserState = Login & User
 
 const initialState: UserState = {
-  login: false,
+  isLogin: false,
   id: undefined,
   name: undefined,
   username: undefined,
@@ -25,7 +25,10 @@ const userSlice = createSlice({
   reducers: {
     login(state, action: PayloadAction<User>) {
       const { id, name, username } = action.payload
-      state = { login: true, id, name, username }
+      state.isLogin = true
+      state.id = id
+      state.name = name
+      state.username = username
     },
     logout(state) {
       state = initialState

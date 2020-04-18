@@ -1,9 +1,13 @@
 import models from '../db/models'
 
+interface Oauth {
+  username: string
+}
+
 export interface User {
   id: number
   name: string
-  username: string
+  Oauth: Oauth
 }
 
 export const getUser = async (id: number): Promise<User> => {

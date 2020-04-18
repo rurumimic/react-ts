@@ -2,6 +2,7 @@ import { DefaultState, Context } from 'koa'
 import Router from '@koa/router'
 import auth from '../auth'
 import { getUser } from '../models/user'
+import { baseURL } from '../config/common'
 
 const router = new Router<DefaultState, Context>({
   prefix: '/oauth',
@@ -17,9 +18,9 @@ router.get(
     return auth.authenticate('github', async (error, user, info, status) => {
       if (error != null || user == null) {
         console.error('Login failed:', error, user, info, status)
-        ctx.state.redirect = '/api/oauth/failed'
+        ctx.state.redirect = baseURL() + '/signin'
       } else {
-        ctx.state.redirect = '/api/oauth/login'
+        ctx.state.redirect = baseURL() + '/welcome'
         await ctx.login(user)
       }
       await next()

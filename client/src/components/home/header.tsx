@@ -1,5 +1,6 @@
 import React from 'react'
-import { Container, Row, Col, Button } from 'react-bootstrap'
+import { SignView } from 'features/sign/signView'
+import { Container, Row, Col } from 'react-bootstrap'
 
 export class Header extends React.Component {
   render(): JSX.Element {
@@ -11,7 +12,7 @@ export class Header extends React.Component {
               <div className="logo">diary</div>
             </Col>
             <Col className="text-right">
-              <Button variant="light">Sign in</Button>
+              <SignView />
             </Col>
           </Row>
         </header>

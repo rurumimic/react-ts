@@ -49,13 +49,14 @@
 2. [Font](docs/018.font.md): Web fonts.
 3. [Home page](docs/019.home.md)
    - node-sass, react-bootstrap, react-router
+4. [Sign in page](docs/020.signin.md)
 
 #### Login
 
-1. [Redux: store](docs/020.redux.md): Setting up the redux store.
+1. [Redux: store](docs/021.redux.md): Setting up the redux store.
    - @reduxjs/toolkit, react-redux
-2. [Redux: reducer](docs/021.reducer.md): Creating the initial state slices.
-3. [Sign in page](docs/022.signin.md)
+2. [Redux: reducer](docs/022.reducer.md): Creating the initial state slices.
+3. [Redux: sign in/out](docs/23.signout.md): Fetch a user data. Store in the redux store.
 
 #### Helmet
 
