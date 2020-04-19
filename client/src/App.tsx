@@ -4,6 +4,7 @@ import { Route, Switch, BrowserRouter as Router } from 'react-router-dom'
 import { Home } from 'pages/home'
 import { Signin } from 'pages/signin'
 import { Welcome } from 'pages/welcome'
+import { Write } from 'pages/write'
 
 const App = (): JSX.Element => (
   <Router>
@@ -11,6 +12,7 @@ const App = (): JSX.Element => (
       <Route exact path="/" component={Home} />
       <Route path="/signin" component={Signin} />
       <Route path="/welcome" component={Welcome} />
+      <Route path="/write" component={Write} />
     </Switch>
   </Router>
 )

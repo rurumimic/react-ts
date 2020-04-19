@@ -19,6 +19,13 @@ export const SignView = (): JSX.Element => {
       <div>
         <span>Hi, {name}.</span>
         <Button
+          href="/write"
+          variant="link"
+          className="text-body font-weight-lighter"
+        >
+          Write
+        </Button>
+        <Button
           onClick={signout}
           variant="link"
           className="text-body font-weight-lighter"

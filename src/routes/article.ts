@@ -6,8 +6,14 @@ const router = new Router<DefaultState, Context>({
   prefix: '/article',
 })
 
+interface Page {
+  page: number
+  size: number
+}
+
 router.get('/list', async (ctx, next) => {
-  const articles = await loadArticles(1, 10)
+  const data: Page = ctx.request.query
+  const articles = await loadArticles(data.page, data.size)
   ctx.body = {
     success: true,
     message: 'Article list',

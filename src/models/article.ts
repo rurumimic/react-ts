@@ -21,8 +21,8 @@ export const loadArticles = async (
   try {
     const articles = await models.Article.findAll({
       attributes: ['id', 'title', 'content', 'createdAt', 'updatedAt'],
-      offset: page - 1,
-      limit: size,
+      limit: size * 1, // sequelize parsing bug: string to int
+      offset: size * (page - 1) * 1, // sequelize parsing bug: string to int
       order: [['createdAt', 'DESC']],
       include: [
         {
@@ -35,7 +35,7 @@ export const loadArticles = async (
   } catch (error) {
     console.error(error)
   }
-  return null
+  return []
 }
 
 export const saveArticle = async (

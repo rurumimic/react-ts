@@ -62,10 +62,9 @@
 
 #### Writings
 
-1. [Write diary](docs/025.write.md): Save diary to database.
+1. [Write diary](docs/025.write.md): Save and erase a diary to database.
    - react-helmet
-2. Keep a diary
-3. Diary App
+2. Diary App
 
 ### Deployment
 
