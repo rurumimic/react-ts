@@ -39,7 +39,7 @@
 2. [Passport](docs/014.passport.md): Get a GitHub user profile.
    - passport-github2, koa-passport, koa-bodyparser, koa-session
 3. [Sign up](docs/015.signup.md): Save a user profile in the database.
-4. [Sign in/out](docs/016.singin-out.md): Koa.js authentication.
+4. [Sign in/out](docs/016.signin-out.md): Koa.js authentication.
 
 ### React.js
 
