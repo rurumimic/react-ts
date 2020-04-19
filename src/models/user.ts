@@ -4,7 +4,7 @@ interface Oauth {
   username: string
 }
 
-export interface User {
+interface User {
   id: number
   name: string
   Oauth: Oauth

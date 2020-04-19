@@ -1,5 +1,6 @@
 import Router from '@koa/router'
 import oauth from './oauth'
+import article from './article'
 
 const router = new Router({
   prefix: '/api',
@@ -7,10 +8,6 @@ const router = new Router({
 
 // api list
 router.use(oauth.routes(), oauth.allowedMethods())
-
-// responds to '/api/hello'
-router.get('/hello', (ctx, next) => {
-  ctx.body = { greet: 'Hello, there.' }
-})
+router.use(article.routes(), article.allowedMethods())
 
 export default router
