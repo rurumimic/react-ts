@@ -60,11 +60,12 @@
 4. [Web storage](docs/024.storage.md): Keep data in local.
    - redux-persist
 
-#### Writing
+#### Writings
 
-1. Helmet
+1. [Write diary](docs/025.write.md): Save diary to database.
+   - react-helmet
 2. Keep a diary
-3. Diary
+3. Diary App
 
 ### Deployment
 

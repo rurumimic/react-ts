@@ -10,3 +10,4 @@ services:
       MYSQL_DATABASE: develop
       MYSQL_USER: master
       MYSQL_PASSWORD: mypw
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci

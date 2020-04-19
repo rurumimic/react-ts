@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
   )
   User.associate = function(models) {
     User.hasOne(models.Oauth)
+    User.hasMany(models.Article)
   }
   return User
 }
