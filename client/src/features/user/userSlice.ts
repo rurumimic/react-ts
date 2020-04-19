@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 interface User {
-  id?: number
-  name?: string
-  username?: string
+  id: number | null
+  name: string | null
+  username: string | null
 }
 
 interface Login {
@@ -14,9 +14,9 @@ type UserState = Login & User
 
 const initialState: UserState = {
   isLogin: false,
-  id: undefined,
-  name: undefined,
-  username: undefined,
+  id: null,
+  name: null,
+  username: null,
 }
 
 const userSlice = createSlice({
@@ -31,7 +31,10 @@ const userSlice = createSlice({
       state.username = username
     },
     logout(state) {
-      state = initialState
+      state.isLogin = false
+      state.id = null
+      state.name = null
+      state.username = null
     },
   },
 })

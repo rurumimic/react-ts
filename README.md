@@ -57,7 +57,8 @@
    - @reduxjs/toolkit, react-redux
 2. [Redux: reducer](docs/022.reducer.md): Creating the initial state slices.
 3. [Redux: sign in/out](docs/023.signout.md): Fetch a user data. Store in the redux store.
-4. Session Storage
+4. [Web storage](docs/024.storage.md): Keep data in local.
+   - redux-persist
 
 #### Writing
 
