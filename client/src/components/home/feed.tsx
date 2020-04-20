@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { loadArticles, deleteArticle } from 'api/article'
-import { Button, Row, Col, Pagination } from 'react-bootstrap'
 import { RootState } from 'store/rootReducer'
+import { Button, Row, Col } from 'react-bootstrap'
+import Pagination from 'react-js-pagination'
 
 interface User {
   id: number
@@ -18,13 +19,17 @@ interface Article {
   User: User
 }
 
+interface Articles {
+  total: number
+  articles: Article[]
+}
+
 export const Feed = (): JSX.Element => {
   const { id } = useSelector((state: RootState) => state.user)
   const [refresh, setRefresh] = useState<boolean>(false)
+  const [total, setTotal] = useState<number>(0)
   const [page, setPage] = useState<number>(1)
   const [size, setSize] = useState<number>(3)
-  const [active, setActive] = useState<number>(1)
-  const [items, setItems] = useState<JSX.Element[]>([])
   const [feeds, setFeeds] = useState<JSX.Element[]>([])
 
   const remove = async (id: number): Promise<void> => {
@@ -32,11 +37,17 @@ export const Feed = (): JSX.Element => {
     setRefresh(true)
   }
 
+  const onChangePage = (pageNumber: number): void => {
+    setPage(pageNumber)
+  }
+
   useEffect(() => {
     async function fetchArticles(page: number, size: number): Promise<void> {
       try {
-        const articles: Article[] = await loadArticles(page, size)
-        const temp: JSX.Element[] = []
+        const data: Articles = await loadArticles(page, size)
+        const total = data.total
+        const articles = data.articles
+        const newFeeds: JSX.Element[] = []
         for (let index = 0; index < articles.length; index++) {
           const date = new Date(articles[index].createdAt).toLocaleString(
             'en-US',
@@ -64,7 +75,7 @@ export const Feed = (): JSX.Element => {
               </p>
             )
           }
-          temp.push(
+          newFeeds.push(
             <div key={articles[index].id} className="py-3">
               <h2>{articles[index].title}</h2>
               <p>
@@ -75,14 +86,15 @@ export const Feed = (): JSX.Element => {
             </div>
           )
         }
-        setFeeds(temp)
+        setTotal(total)
+        setFeeds(newFeeds)
         setRefresh(false)
       } catch (error) {
         console.error(error)
       }
     }
     fetchArticles(page, size)
-  }, [refresh, page, size])
+  }, [id, refresh, page, size])
 
   return (
     <main role="main" className="container">
@@ -90,7 +102,17 @@ export const Feed = (): JSX.Element => {
         <Col>{feeds}</Col>
       </Row>
       <Row>
-        <Col></Col>
+        <Col>
+          <Pagination
+            activePage={page}
+            itemsCountPerPage={3}
+            totalItemsCount={total}
+            pageRangeDisplayed={5}
+            itemClass="page-item"
+            linkClass="page-link"
+            onChange={pageNumber => onChangePage(pageNumber)}
+          />
+        </Col>
       </Row>
     </main>
   )

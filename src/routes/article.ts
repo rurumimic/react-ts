@@ -1,6 +1,11 @@
 import { DefaultState, Context } from 'koa'
 import Router from '@koa/router'
-import { loadArticles, saveArticle, deleteArticle } from '../models/article'
+import {
+  loadArticles,
+  totalArticles,
+  saveArticle,
+  deleteArticle,
+} from '../models/article'
 
 const router = new Router<DefaultState, Context>({
   prefix: '/article',
@@ -14,10 +19,14 @@ interface Page {
 router.get('/list', async (ctx, next) => {
   const data: Page = ctx.request.query
   const articles = await loadArticles(data.page, data.size)
+  const total = await totalArticles()
   ctx.body = {
     success: true,
     message: 'Article list',
-    data: articles,
+    data: {
+      total: total,
+      articles: articles,
+    },
   }
 })
 

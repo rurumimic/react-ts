@@ -38,6 +38,20 @@ export const loadArticles = async (
   return []
 }
 
+export const totalArticles = async (): Promise<number> => {
+  try {
+    const article = await models.Article.findOne({
+      attributes: [
+        [models.sequelize.fn('COUNT', models.sequelize.col('id')), 'count'],
+      ],
+    })
+    return article.get('count')
+  } catch (error) {
+    console.error(error)
+  }
+  return 0
+}
+
 export const saveArticle = async (
   UserId: number,
   title: string,

@@ -63,8 +63,7 @@
 #### Writings
 
 1. [Write diary](docs/025.write.md): Save and erase a diary to database.
-   - react-helmet
-2. Diary App
+   - react-helmet, react-js-pagination
 
 ### Deployment
 

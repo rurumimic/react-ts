@@ -14,14 +14,19 @@ interface Article {
   User: User
 }
 
+interface Articles {
+  total: number
+  articles: Article[]
+}
+
 export const loadArticles = async (
   page: number,
   size: number
-): Promise<Article[]> => {
+): Promise<Articles> => {
   const response = await axios.get('/api/article/list', {
     params: { page: page, size: size },
   })
-  const result: Article[] = await response.data.data
+  const result: Articles = await response.data.data
   return result
 }
 
